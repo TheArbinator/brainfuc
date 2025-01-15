@@ -12,6 +12,11 @@ uint8_t loop_index = 0;
 
 int main (int argc, char** argv) {
 
+    if(argc < 2) {
+        fprintf(stderr, "USAGE: brainfuc [FILENAME]\n");
+        return 1;
+    }
+
     FILE* input = fopen(argv[1], "r");
     fread(program, 1, 30000, input);
     fclose(input);
